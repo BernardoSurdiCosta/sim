@@ -39,7 +39,7 @@ async function login() {
     })
 
     if (req.ok) {
-      modal.style.display = 'none';
+      modal.style.display = 'none'; 
       alert("Logado com sucesso!")
       
     } else {
@@ -50,6 +50,34 @@ async function login() {
   }
 }
 
+  function verify(){
+    token = localStorage.getItem('storedIdUsuario')
+  }
+
+ async function Like(){
+
+ }
+
+ async function Dislike(){
+  
+ }
+
+ async function adicionarAosFavoritos(item) {
+  let fav = document.getElementById(item).innerHTML;
+  console.log(fav)
+  
+  let favoritos = []
+
+  if (favoritos.includes(fav)) {
+    console.log('Item já está nos favoritos.');
+    return;
+  }
+  else{
+  favoritos.push(fav);
+  console.log('Item adicionado aos favoritos:', fav);
+  }
+  console.log(favoritos)
+}
 
 
 async function renderUser() {
@@ -65,9 +93,9 @@ async function renderUser() {
       if (index < 2) {
         cardSizeClass = 'large';
       } else if (index < 6) {
-        cardSizeClass = 'medium';
-      } else {
         cardSizeClass = 'small';
+      } else {
+        cardSizeClass = 'medium';
       }
 
       
@@ -75,11 +103,11 @@ async function renderUser() {
         <div class="card ${cardSizeClass}"">
           <img src="/assets/${item.nome}.jpg" class="card-img-top" alt="${item.nome}">
           <div class="card-body">
-            <h5 class="card-title">${item.nome}</h5>  
+            <h5 class="card-title" id="${index}">${item.nome}</h5>  
             <div class="botoes">
-              <button><img src="/assets/like.svg" alt="">0</button>
-              <button><img src="/assets/deslike.svg" alt="">0</button>
-              <button><img src="/assets/favorite.svg" alt=""></button>
+            <button class="like-button" onclick="Like(${index})"data-key=""><img src="/assets/like.svg" alt="">0</button>
+            <button class="dislike-button" onclick="Dislike(${index}) data-key="${index}"><img src="/assets/deslike.svg" alt="">0</button>
+              <button onclick="adicionarAosFavoritos(${index})"><img src="/assets/favorite.svg" alt=""></button>
             </div>
           </div>
         </div>

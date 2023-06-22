@@ -21,4 +21,18 @@ module.exports = class UserController {
       return 
     }
   }
+
+  async Favoritar(request,response) {
+    const { favoritos } = request.body;
+    console.log(favoritos)
+    const updatedUser = await User.update(
+      {
+        where: {
+          id: Number(request.params.id),
+        },
+      }
+    )
+
+    response.json(updatedUser)
+  }
 }

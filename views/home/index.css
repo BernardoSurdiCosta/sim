@@ -113,20 +113,20 @@ footer{
 }
 
 .card.large {
-  grid-column: span 4;
+  grid-column: span 6;
 }
 
 .card.medium {
-  grid-column: span 3;
+  grid-column: span 4;
 }
 
 .card.small {
-  grid-column: span 2;
+  grid-column: span 3;
 }
 
 main {
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   grid-gap: 1rem;
   align-items: center;
 }
