@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/CSS/index.css">
+    <title>Home</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" id="logo" href="#">VESTE VC</a>
+        <div class="" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/HTML/index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/HTML/favoritos.html">Favoritos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><button id="openModal">Login</button></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h1>Login</h1>
+            <form id="loginForm">
+                <input type="email" class="input" id="email" name="email" placeholder="E-mail" required><br><br>
+                <input type="password" class="input" id="password" name="password" placeholder="Senha" required><br><br>
+                <div id="modal">
+                    <button class="modal-btn" id="cancelar">Cancelar</button>
+                    <button class="modal-btn" id="confirmar"><span id="confirm">Confirmar</span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card" style="width: 18rem;">
+            <img src="/produtos/Calça Mantis.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>  
+              <div class="buttons">
+                <button><img src="/Icons/like.svg" alt="">0</button>
+                <button><img src="/Icons/deslike.svg" alt="">0</button>
+                <button><img src="/Icons/favorite.svg" alt=""></button>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="/produtos/Calção Bob.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+
+            </div>
+          </div>
+    </div>
+
+    <footer>
+        <h1>VESTE VC</h1>
+        <hr>
+        <p>2022  / Todos os direitos reservados.</p>
+    </footer>
+    <script src="/JS/index.js"></script>
+
+</body>
+
+</html>

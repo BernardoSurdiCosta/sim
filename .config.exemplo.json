@@ -1,0 +1,16 @@
+{
+    "database": {
+      "dialect": "postgree",
+      "host": "localhost",
+      "port": 1000,
+      "username": "lucas",
+      "password": "abacaxi",
+      "database": "SuperMercado",
+      "pool": {
+        "max": 5,
+        "min": 0,
+        "acquire": 30000,
+        "idle": 10000
+      }
+    }
+  }

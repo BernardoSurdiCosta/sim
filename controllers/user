@@ -1,0 +1,62 @@
+const UserService = require("../services/user.service")
+
+const userService = new UserService()
+
+module.exports = class UserController {
+  async login(request, response) {
+    const userLoginSchema = yup.object({
+      password: yup.string().required(),
+      email: yup.string().email().required(),
+    })
+
+    const parsedRequest = await userLoginSchema
+      .validate(request.body)
+      .catch((error) => {
+        response.statusCode = 400
+        response.json(error)
+      })
+
+    const user = await User.findOne({
+      include: [
+        {
+          model: UserRole,
+          as: "user_roles",
+          include: [{ model: Role, as: "role" }],
+        },
+      ],
+      where: {
+        email: parsedRequest.email,
+      },
+    })
+
+    if (!user?.dataValues) {
+      response.statusCode = 404
+      response.json({
+        error: "Usuário não encontrado!",
+      })
+      return
+    }
+
+    const { password: hash, ...userInformation } = user.dataValues
+
+    const isPasswordCorrect = await bcrypt.compare(parsedRequest.password, hash)
+
+    if (!isPasswordCorrect) {
+      response.statusCode = 400
+      response.json({
+        error: "Senha incorreta!",
+      })
+      return
+    }
+
+    const token = userService.generateToken(
+      userInformation,
+      request.get("user-agent")
+    )
+
+    response.json({
+      data: userInformation,
+      token,
+    })
+  }
+}
