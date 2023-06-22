@@ -1,5 +1,12 @@
+@font-face {
+    font-family: 'Segoe UI1';
+    src: local('Segoe UI'), url('/public/assets/Segoe\ UI.ttf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI1';
 }
 #navbarNav{
     padding-left: 400px;
@@ -18,7 +25,7 @@ button{
 
 footer{
         background-color: black;
-        padding: 20px;
+        padding: 20px; 
         text-align: center;
         color: white;
         width: 100%;

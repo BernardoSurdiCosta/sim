@@ -18,9 +18,6 @@ module.exports = (sequelize, Sequelize) => {
         senha: {
           type: Sequelize.STRING,
         },
-        favoritos: {
-          type: Sequelize.STRING,
-        },
       },
       { timestamps: false }
     )
