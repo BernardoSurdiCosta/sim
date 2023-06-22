@@ -57,24 +57,22 @@ async function renderUser() {
     let req = await fetch("http://localhost:3000/api/produto");
     let data = await req.json();
 
-    let containerProdutos = document.getElementById("container-produtos");
-    containerProdutos.innerHTML = ""; 
+    const mainPage = document.querySelector('main'); 
 
     data.produtos.forEach((item, index) => {
       let cardSizeClass = '';
 
       if (index < 2) {
-          cardSizeClass = 'large';
+        cardSizeClass = 'large';
       } else if (index < 6) {
-          cardSizeClass = 'small';
+        cardSizeClass = 'medium';
       } else {
-          cardSizeClass = 'medium';
+        cardSizeClass = 'small';
       }
 
-      let itemProduto = document.createElement("div");
-      itemProduto.setAttribute("data-key", index);
-      itemProduto.innerHTML = `
-        <div class="card ${cardSizeClass}" style="width: 18rem;">
+      
+      let itemProduto = `
+        <div class="card ${cardSizeClass}"">
           <img src="/assets/${item.nome}.jpg" class="card-img-top" alt="${item.nome}">
           <div class="card-body">
             <h5 class="card-title">${item.nome}</h5>  
@@ -87,7 +85,7 @@ async function renderUser() {
         </div>
       `;
       
-      containerProdutos.appendChild(itemProduto);
+      mainPage.innerHTML += itemProduto;
     });
   } catch (error) {
     console.log("Ocorreu um erro ao renderizar os produtos:", error);
