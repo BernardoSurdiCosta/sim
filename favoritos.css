@@ -1,0 +1,32 @@
+#navbarNav{
+    padding-left: 400px;
+ }
+    
+ body{
+    font-family: 'calibri light', calibri, arial, sans-serif;
+  }
+
+#logo{
+        padding-left: 20px;
+        font-size: x-large;
+        font-weight: bolder;
+    }
+
+button{
+        border: none;
+        background-color: #FFFFFF;
+    }
+
+footer{
+        background-color: black;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        width: 100%;
+        bottom: 0;
+    }
+
+#titulo{
+    display: flex;
+    justify-content: center; 
+}
