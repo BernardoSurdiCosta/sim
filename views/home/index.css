@@ -24,6 +24,9 @@ padding-left: 400px;
 #logout{
   display: none;
 }
+.red-image {
+  color: red;
+}
 
 .modal {
   display: none;

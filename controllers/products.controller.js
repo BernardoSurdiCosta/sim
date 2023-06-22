@@ -1,13 +1,11 @@
-const { Produto, IsLiked } = require("../models")
+const { Produto,  } = require("../models")
 
 module.exports = class ProductsController{
   async getALL(request, response) {
     const produtos = await Produto.findAll();
-    const likes = await IsLiked.findAll()
-
+  
     response.json({
         produtos,
-        likes
     })
 }
 }
