@@ -1,11 +1,11 @@
-const { Products } = require("../models")
+const { Produto } = require("../models")
 
 module.exports = class ProductsController{
   async getALL(request, response) {
-    const products = await Products.findAll()
+    const produtos = await Produto.findAll()
 
     response.json({
-        products,
+        produtos,
     })
 }
 }
