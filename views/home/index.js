@@ -215,3 +215,4 @@ async function renderUser() {
 }
 
 renderUser();
+localStorage.clear();
