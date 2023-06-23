@@ -20,8 +20,15 @@ body{
 
 button{
         border: none;
-        background-color: #FFFFFF;
+        background: none;
     }
+
+    .card-body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #707070;
+      }
 
 footer{
         background-color: black;
@@ -38,3 +45,14 @@ footer{
     display: flex;
     justify-content: center; 
 }
+
+.card.small {
+    grid-column: span 3;
+  }
+  
+  main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1rem;
+    align-items: center;
+  }

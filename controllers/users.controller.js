@@ -1,4 +1,4 @@
-const { User, IsLiked } = require("../models")
+const { User, IsLiked, Favorito } = require("../models")
 
 
 module.exports = class UserController {
@@ -24,6 +24,21 @@ module.exports = class UserController {
     }
   }
 
+  async adicionarFavorito(request, response) {
+    try {
+      const { id_usuario, id_produto } = request.body;
+  
+      const favorito = await Favorito.create({
+        id_usuario,
+        id_produto
+      });
+  
+      response.status(201).json(favorito);
+    } catch (error) {
+      console.error('Erro ao adicionar favorito:', error);
+      response.status(500).json({ error: 'Erro ao adicionar favorito' });
+    }
+  }
 
     async Like(request, response) {
       try {
@@ -74,5 +89,6 @@ module.exports = class UserController {
         return response.status(500).json({ success: false, message: 'Não foi possível registrar o dislike.' });
       }
     };
+
 
 }

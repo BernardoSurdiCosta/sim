@@ -15,9 +15,12 @@ app.use("/", express.static("./views/home"))
 app.use("/favoritos", express.static('./views/favoritos'));
 
 app.get('/api/produto',productsController.getALL)
+app.get('/api/produtolikes',productsController.getLikes)
 app.post('/api/login',userController.Login)
 app.post('/api/likes',userController.Like)
 app.post('/api/dislikes',userController.Dislike)
+app.post('/api/favoritos',userController.adicionarFavorito)
+app.get('/api/favorito/:id',productsController.getFav)
 
 app.listen(3000, () => {
     console.log(`Servidor está rodando em http://localhost:3000`)

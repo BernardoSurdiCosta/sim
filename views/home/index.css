@@ -84,8 +84,9 @@ padding-left: 400px;
 }
 
 button{
+  background: none;
   border: none;
-  background-color: #FFFFFF;
+
 }
 
 footer{
@@ -124,6 +125,7 @@ footer{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #707070;
 }
 
 .card.large {
@@ -145,3 +147,6 @@ main {
   align-items: center;
 }
 
+.red{
+  fill: #ff0000;
+}
